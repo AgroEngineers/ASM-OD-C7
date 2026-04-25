@@ -7,7 +7,7 @@ from asm.api.cv import ASMDetector, DetectedObject
 
 
 class C7(ASMDetector):
-    def process(self, frame: numpy.ndarray) -> Union[DetectedObject, None]:
+    async def process(self, frame: numpy.ndarray) -> Union[DetectedObject, None]:
         h, w = frame.shape[:2]
 
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
